@@ -30,6 +30,10 @@ COPY scripts /tmp/scripts
 
 # Run the build script, then clean up temp files and finalize container build.
 RUN chmod +x /tmp/scripts/build.sh && \
-        /tmp/scripts/build.sh && \
-        rm -rf /tmp/* /var/* && \
-        ostree container commit
+    /tmp/scripts/build.sh && \
+    systemctl disable gdm.service && \
+    systemctl enable lightdm.service && \
+    systemctl enable lightdm-workaround.service && \
+    systemctl enable touchegg.service && \
+    rm -rf /tmp/* /var/* && \
+    ostree container commit
