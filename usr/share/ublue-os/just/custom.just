@@ -1,12 +1,3 @@
-setup-flatpaks:
-  #!/usr/bin/env bash
-  echo 'Installing flatpaks from the ublue recipe ...'
-  flatpaks=$(yq -- '.firstboot.flatpaks[]' "/usr/share/ublue-os/recipe.yml")
-  for pkg in $flatpaks; do \
-      echo "Installing: ${pkg}" && \
-      flatpak install --user --noninteractive flathub $pkg; \
-  done
-
 setup-gaming:
   echo 'Setting up gaming experience ... lock and load.'
   flatpak install -y --user \\
@@ -26,7 +17,3 @@ setup-gaming:
   flatpak override com.usebottles.bottles --user --filesystem=xdg-data/applications 
   flatpak override --user --env=MANGOHUD=1 com.valvesoftware.Steam 
   flatpak override --user --env=MANGOHUD=1 com.heroicgameslauncher.hgl 
-
-nix-me-up:
-  echo 'Setting phasers to kill. Installing nix.'
-  /usr/bin/ublue-nix-install
