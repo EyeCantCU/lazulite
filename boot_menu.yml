@@ -1,0 +1,11 @@
+ublue_variants:
+  - label: eyecantcu/lazulite
+    ks: /kickstart/ublue-os.ks
+    flavors:
+      - label: lazulite
+        info: Lazulite
+  - label: eyecantcu/lazulite-nvidia
+    ks: /kickstart/ublue-os-nvidia.ks
+    flavors:
+      - label: lazulite-nvidia
+        info: Lazulite (Nvidia)
