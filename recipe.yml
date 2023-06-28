@@ -14,6 +14,7 @@ rpm:
   # A list of urls of repositories that should be added to your system.
   # Tip: Use `%FEDORA_VERSION%` instead of static Fedora version numbers.
   repos:
+    - https://terra.fyralabs.com/terra.repo
 
   # These RPMs will be installed from your enabled repositories.
   install:
@@ -21,6 +22,62 @@ rpm:
     - libadwaita
     # Needed for yafti (the first boot installer).
     - python3-pip
+
+    - contractor
+    - elementary-capnet-assist
+    - elementary-icon-theme
+    - elementary-notifications
+    - elementary-sound-theme
+    - elementary-theme
+    - elementary-wallpapers
+    - gala
+    - gnome-session
+    - pantheon-agent-geoclue2
+    - pantheon-agent-polkit
+    - pantheon-session-settings
+    - plank
+    - wingpanel
+    - wingpanel-applications-menu
+    - wingpanel-indicator-bluetooth
+    - wingpanel-indicator-datetime
+    - wingpanel-indicator-keyboard
+    - wingpanel-indicator-network
+    - wingpanel-indicator-nightlight
+    - wingpanel-indicator-notifications
+    - wingpanel-indicator-power
+    - wingpanel-indicator-session
+    - wingpanel-indicator-sound
+
+    # Defaults
+    - elementary-calculator
+    - elementary-calendar
+    - elementary-camera
+    - elementary-code
+    - elementary-files
+    - elementary-greeter
+    - elementary-music
+    - elementary-photos
+    - elementary-print
+    - elementary-screenshot-tool
+    - elementary-shortcut-overlay
+    - elementary-sideload
+    - elementary-terminal
+    - elementary-videos
+    - pantheon-tweaks
+    - switchboard
+    - switchboard-plug-a11y
+    - switchboard-plug-about
+    - switchboard-plug-applications
+    - switchboard-plug-bluetooth
+    - switchboard-plug-display
+    - switchboard-plug-keyboard
+    - switchboard-plug-mouse-touchpad
+    - switchboard-plug-networking
+    - switchboard-plug-notifications
+    - switchboard-plug-pantheon-shell
+    - switchboard-plug-printers
+    - switchboard-plug-sharing
+    - switchboard-plug-sound
 
   # These RPMs will be removed from the system image.
   remove:
