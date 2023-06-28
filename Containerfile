@@ -16,6 +16,7 @@ ARG FEDORA_MAJOR_VERSION="${FEDORA_MAJOR_VERSION}"
 ARG RECIPE=./recipe.yml
 
 # Copy static configurations and component files.
+COPY etc /etc
 COPY usr /usr
 
 # Copy the recipe that we're building.
