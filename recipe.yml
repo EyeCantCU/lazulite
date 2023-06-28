@@ -79,6 +79,8 @@ rpm:
     - switchboard-plug-sharing
     - switchboard-plug-sound
 
+    - touchegg
+
   # These RPMs will be removed from the system image.
   remove:
     # Remove the native firefox (from Fedora) in favor of the Flatpak.
