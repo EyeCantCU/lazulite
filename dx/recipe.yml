@@ -14,9 +14,13 @@ rpm:
   # A list of urls of repositories that should be added to your system.
   # Tip: Use `%FEDORA_VERSION%` instead of static Fedora version numbers.
   repos:
+    - https://copr.fedorainfracloud.org/coprs/eyecantcu/android-udev-rules/repo/fedora-%FEDORA_VERSION%/eyecantcu-android-udev-rules-fedora-%FEDORA_VERSION%.repo
 
   # These RPMs will be installed from your enabled repositories.
   install:
+    - android-tools
+    - android-udev-rules
+
     - libvirt
     - qemu
     - qemu-user-static
