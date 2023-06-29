@@ -44,4 +44,22 @@ RUN chmod +x /tmp/scripts/build.sh && \
     systemctl enable lightdm-workaround.service && \
     systemctl enable touchegg.service && \
     rm -rf /tmp/* /var/* && \
+    ostree container commit && \
+    mkdir -p /var/tmp && \
+    chmod -R 1777 /var/tmp
+
+# Lazulite DX
+FROM lazulite as lazulite-dx
+
+ARG IMAGE_NAME="${IMAGE_NAME}"
+ARG FEDORA_MAJOR_VERSION="${FEDORA_MAJOR_VERSION}"
+
+ARG RECIPE=dx/recipe.yml
+COPY ${RECIPE} /usr/share/ublue-os/recipe-dx.yml
+
+COPY dx/scripts /tmp/dx
+
+RUN chmod +x /tmp/dx/build.sh && \
+    /tmp/dx/build.sh && \
+    rm -rf /tmp/* /var/* && \
     ostree container commit
