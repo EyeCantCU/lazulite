@@ -21,6 +21,8 @@ rpm:
   install:
     - contractor
 
+    - distrobox
+
     - elementary-calculator
     - elementary-calendar
     - elementary-camera

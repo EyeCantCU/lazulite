@@ -29,3 +29,4 @@ rpm:
 
   # These RPMs will be removed from the system image.
   remove:
+    - distrobox
