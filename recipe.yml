@@ -14,6 +14,7 @@ rpm:
   # A list of urls of repositories that should be added to your system.
   # Tip: Use `%FEDORA_VERSION%` instead of static Fedora version numbers.
   repos:
+    - https://copr.fedorainfracloud.org/coprs/ublue-os/gnome-software/repo/fedora-%FEDORA_VERSION%/ublue-os-gnome-software-fedora-%FEDORA_VERSION%.repo
     - https://terra.fyralabs.com/terra.repo
 
   # These RPMs will be installed from your enabled repositories.
