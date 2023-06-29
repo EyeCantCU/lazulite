@@ -48,6 +48,8 @@ rpm:
 
     - gnome-session
 
+    - input-remapper
+
     # GNOME's GTK4 theme, many native apps and binaries require it.
     - libadwaita
 

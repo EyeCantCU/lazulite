@@ -42,6 +42,7 @@ RUN chmod +x /tmp/scripts/build.sh && \
     systemctl disable gdm.service && \
     systemctl enable lightdm.service && \
     systemctl enable lightdm-workaround.service && \
+    systemctl enable input-remapper.service && \
     systemctl enable touchegg.service && \
     rm -rf /tmp/* /var/* && \
     ostree container commit && \
