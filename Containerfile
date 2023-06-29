@@ -60,9 +60,15 @@ COPY ${RECIPE} /usr/share/ublue-os/recipe-dx.yml
 # Copy latest "cosign"
 COPY --from=cgr.dev/chainguard/cosign:latest /usr/bin/cosign /usr/bin/cosign
 
+# Intel Mono
+ARG MONO=/usr/share/fonts/intel-one-mono
+RUN mkdir -p ${MONO}
+COPY --from=ghcr.io/ublue-os/bling:latest /files${MONO} ${MONO}
+
 COPY dx/scripts /tmp/dx
 
 RUN chmod +x /tmp/dx/build.sh && \
     /tmp/dx/build.sh && \
+    fc-cache -f /usr/share/fonts/intelmono && \
     rm -rf /tmp/* /var/* && \
     ostree container commit
