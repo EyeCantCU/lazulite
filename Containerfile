@@ -28,9 +28,17 @@ COPY --from=docker.io/mikefarah/yq /usr/bin/yq /usr/bin/yq
 # Copy the build script and all custom scripts.
 COPY scripts /tmp/scripts
 
+# Fonts
+ARG FONTS=/usr/share/fonts
+RUN mkdir -p ${FONTS}/{inter,ubuntu}
+COPY --from=ghcr.io/ublue-os/bling:latest /files${FONTS} ${FONTS}/inter
+COPY --from=ghcr.io/ublue-os/bling:latest /files${FONTS} ${FONTS}/ubuntu
+
 # Run the build script, then clean up temp files and finalize container build.
 RUN chmod +x /tmp/scripts/build.sh && \
     /tmp/scripts/build.sh && \
+    fc-cache -f /usr/share/fonts/ubuntu && \
+    fc-cache -f /usr/share/fonts/inter && \
     systemctl disable gdm.service && \
     systemctl enable lightdm.service && \
     systemctl enable lightdm-workaround.service && \
