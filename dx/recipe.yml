@@ -17,6 +17,11 @@ rpm:
 
   # These RPMs will be installed from your enabled repositories.
   install:
+    - libvirt
+    - qemu
+    - qemu-user-static
+    - qemu-user-binfmt
+    - virt-manager
 
   # These RPMs will be removed from the system image.
   remove:
