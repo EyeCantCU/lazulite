@@ -47,6 +47,10 @@ rpm:
     - elementary-videos
     - elementary-wallpapers
 
+    - exa
+
+    - fd-find
+
     - gala
 
     - gnome-session
@@ -55,6 +59,8 @@ rpm:
 
     # GNOME's GTK4 theme, many native apps and binaries require it.
     - libadwaita
+
+    - micro
 
     - pantheon-agent-geoclue2
     - pantheon-agent-polkit
