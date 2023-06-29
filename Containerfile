@@ -57,6 +57,9 @@ ARG FEDORA_MAJOR_VERSION="${FEDORA_MAJOR_VERSION}"
 ARG RECIPE=dx/recipe.yml
 COPY ${RECIPE} /usr/share/ublue-os/recipe-dx.yml
 
+# Copy latest "cosign"
+COPY --from=cgr.dev/chainguard/cosign:latest /usr/bin/cosign /usr/bin/cosign
+
 COPY dx/scripts /tmp/dx
 
 RUN chmod +x /tmp/dx/build.sh && \
