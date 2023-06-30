@@ -1,5 +1,25 @@
 # Changelog
 
+## [1.1.0](https://github.com/EyeCantCU/lazulite/compare/v1.0.0...v1.1.0) (2023-06-30)
+
+
+### Features
+
+* Add and enable Input Remapper ([794e142](https://github.com/EyeCantCU/lazulite/commit/794e142b6c2b910b55eac4986fbfe0e8a5051489))
+* Add ddcontrol ([ab734f4](https://github.com/EyeCantCU/lazulite/commit/ab734f4c85537e6e1a2ad41e69e1ed2bc2ea0d67))
+* Add Gnome Software with PWA support ([dafb33c](https://github.com/EyeCantCU/lazulite/commit/dafb33cd70a0a5ee6cacad37f4dbbd06f3387c47))
+* Add just scripts for Zsh and plugins ([ea52e7e](https://github.com/EyeCantCU/lazulite/commit/ea52e7ef2b4417540776b21407e8511461971254))
+* Add some helpful CLI utilities (exa, fd, micro) ([8b04af1](https://github.com/EyeCantCU/lazulite/commit/8b04af19ca7b760a3d2f59d53bc9df09671cf19b))
+* **dx:** Add cosign ([e45efba](https://github.com/EyeCantCU/lazulite/commit/e45efba6082300e1f06a9e71d5e01f42c4185a75))
+* **dx:** Add Intel One Mono from bling ([fc2d8ae](https://github.com/EyeCantCU/lazulite/commit/fc2d8ae29940f05f0f23ff0f74da1fbf4c781be0))
+* **dx:** Include virtualization tools ([3c9c36e](https://github.com/EyeCantCU/lazulite/commit/3c9c36eb4193b0656ba1338808abe463156c5d44))
+* **dx:** Ship android tools and udev rules ([4ec6bb7](https://github.com/EyeCantCU/lazulite/commit/4ec6bb75f7dcd02be505101f559a1836fd6edd85))
+* **dx:** Ship DevPod ([f03fd28](https://github.com/EyeCantCU/lazulite/commit/f03fd28ef232f8291c71561077e8c6ad536e3c85))
+* Introduce developer (dx) images ([30a80c4](https://github.com/EyeCantCU/lazulite/commit/30a80c4f4e78094687a06f35678da0b4e77c5ff0))
+* Pull in Ubuntu and Inter fonts from bling ([abc8de5](https://github.com/EyeCantCU/lazulite/commit/abc8de53748fb586ddeb0cb19150f6939f187b27))
+* Ship distrobox ([d4184db](https://github.com/EyeCantCU/lazulite/commit/d4184db2c56592e6ffcbfd914ca867f410aa2eaa))
+* Ship Steven Black's hosts file ([7f84023](https://github.com/EyeCantCU/lazulite/commit/7f840230efd36232dfc9e46e9b289fcb9661c1a6))
+
 ## 1.0.0 (2023-06-28)
 
 
