@@ -36,7 +36,7 @@ COPY --from=ghcr.io/ublue-os/bling:latest /files${FONTS} ${FONTS}/ubuntu
 
 # Run the build script, then clean up temp files and finalize container build.
 RUN chmod +x /tmp/scripts/build.sh && \
-    /tmp/scripts/build.sh && \
+    /tmp/scripts/build.sh main && \
     fc-cache -f /usr/share/fonts/ubuntu && \
     fc-cache -f /usr/share/fonts/inter && \
     systemctl disable gdm.service && \
@@ -55,8 +55,7 @@ FROM lazulite as lazulite-dx
 ARG IMAGE_NAME="${IMAGE_NAME}"
 ARG FEDORA_MAJOR_VERSION="${FEDORA_MAJOR_VERSION}"
 
-ARG RECIPE=dx/recipe.yml
-COPY ${RECIPE} /usr/share/ublue-os/recipe-dx.yml
+COPY scripts /tmp/scripts
 
 # Copy latest "cosign"
 COPY --from=cgr.dev/chainguard/cosign:latest /usr/bin/cosign /usr/bin/cosign
@@ -66,10 +65,8 @@ ARG MONO=/usr/share/fonts/intel-one-mono
 RUN mkdir -p ${MONO}
 COPY --from=ghcr.io/ublue-os/bling:latest /files${MONO} ${MONO}
 
-COPY dx/scripts /tmp/dx
-
-RUN chmod +x /tmp/dx/build.sh && \
-    /tmp/dx/build.sh && \
+RUN chmod +x /tmp/scripts/build.sh && \
+    /tmp/scripts/build.sh dx && \
     fc-cache -f /usr/share/fonts/intelmono && \
     rm -rf /tmp/* /var/* && \
     ostree container commit

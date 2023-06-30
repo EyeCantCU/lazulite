@@ -1,108 +1,139 @@
-scripts:
-  # "Pre" scripts run immediately after repos have been imported.
-  pre:
-    # Automatically runs script files within "scripts/pre/".
-    - autorun.sh
+main:
+  scripts:
+    # "Pre" scripts run immediately after repos have been imported.
+    pre:
 
-  # "Post" scripts run at the end of the build process.
-  post:
-    # Automatically runs script files within "scripts/post/".
-    - autorun.sh
+    # "Post" scripts run at the end of the build process.
+    post:
+      - gnome-software-pwa.sh
+      - hosts.sh
 
-# Custom RPM configuration.
-rpm:
-  # A list of urls of repositories that should be added to your system.
-  # Tip: Use `%FEDORA_VERSION%` instead of static Fedora version numbers.
-  repos:
-    - https://copr.fedorainfracloud.org/coprs/ublue-os/gnome-software/repo/fedora-%FEDORA_VERSION%/ublue-os-gnome-software-fedora-%FEDORA_VERSION%.repo
-    - https://terra.fyralabs.com/terra.repo
+  # Custom RPM configuration.
+  rpm:
+    # A list of urls of repositories that should be added to your system.
+    # Tip: Use `%FEDORA_VERSION%` instead of static Fedora version numbers.
+    repos:
+      - https://copr.fedorainfracloud.org/coprs/ublue-os/gnome-software/repo/fedora-%FEDORA_VERSION%/ublue-os-gnome-software-fedora-%FEDORA_VERSION%.repo
+      - https://terra.fyralabs.com/terra.repo
 
-  # These RPMs will be installed from your enabled repositories.
-  install:
-    - contractor
+    # These RPMs will be installed from your enabled repositories.
+    install:
+      - contractor
 
-    - ddccontrol
-    - ddccontrol-gtk
+      - ddccontrol
+      - ddccontrol-gtk
 
-    - distrobox
+      - distrobox
 
-    - elementary-calculator
-    - elementary-calendar
-    - elementary-camera
-    - elementary-capnet-assist
-    - elementary-code
-    - elementary-files
-    - elementary-greeter
-    - elementary-icon-theme
-    - elementary-music
-    - elementary-notifications
-    - elementary-photos
-    - elementary-print
-    - elementary-screenshot-tool
-    - elementary-shortcut-overlay
-    - elementary-sideload
-    - elementary-sound-theme
-    - elementary-terminal
-    - elementary-theme
-    - elementary-videos
-    - elementary-wallpapers
+      - elementary-calculator
+      - elementary-calendar
+      - elementary-camera
+      - elementary-capnet-assist
+      - elementary-code
+      - elementary-files
+      - elementary-greeter
+      - elementary-icon-theme
+      - elementary-music
+      - elementary-notifications
+      - elementary-photos
+      - elementary-print
+      - elementary-screenshot-tool
+      - elementary-shortcut-overlay
+      - elementary-sideload
+      - elementary-sound-theme
+      - elementary-terminal
+      - elementary-theme
+      - elementary-videos
+      - elementary-wallpapers
 
-    - exa
+      - exa
 
-    - fd-find
+      - fd-find
 
-    - gala
+      - gala
 
-    - gnome-session
+      - gnome-session
 
-    - input-remapper
+      - input-remapper
 
-    # GNOME's GTK4 theme, many native apps and binaries require it.
-    - libadwaita
+      # GNOME's GTK4 theme, many native apps and binaries require it.
+      - libadwaita
 
-    - micro
+      - micro
 
-    - pantheon-agent-geoclue2
-    - pantheon-agent-polkit
-    - pantheon-session-settings
-    - pantheon-tweaks
+      - pantheon-agent-geoclue2
+      - pantheon-agent-polkit
+      - pantheon-session-settings
+      - pantheon-tweaks
 
-    - plank
+      - plank
 
-    # Needed for yafti (the first boot installer).
-    - python3-pip
+      # Needed for yafti (the first boot installer).
+      - python3-pip
 
-    - switchboard
-    - switchboard-plug-a11y
-    - switchboard-plug-about
-    - switchboard-plug-applications
-    - switchboard-plug-bluetooth
-    - switchboard-plug-display
-    - switchboard-plug-keyboard
-    - switchboard-plug-mouse-touchpad
-    - switchboard-plug-networking
-    - switchboard-plug-notifications
-    - switchboard-plug-pantheon-shell
-    - switchboard-plug-printers
-    - switchboard-plug-sharing
-    - switchboard-plug-sound
+      - switchboard
+      - switchboard-plug-a11y
+      - switchboard-plug-about
+      - switchboard-plug-applications
+      - switchboard-plug-bluetooth
+      - switchboard-plug-display
+      - switchboard-plug-keyboard
+      - switchboard-plug-mouse-touchpad
+      - switchboard-plug-networking
+      - switchboard-plug-notifications
+      - switchboard-plug-pantheon-shell
+      - switchboard-plug-printers
+      - switchboard-plug-sharing
+      - switchboard-plug-sound
 
-    - touchegg
+      - touchegg
 
-    - wingpanel
-    - wingpanel-applications-menu
-    - wingpanel-indicator-bluetooth
-    - wingpanel-indicator-datetime
-    - wingpanel-indicator-keyboard
-    - wingpanel-indicator-network
-    - wingpanel-indicator-nightlight
-    - wingpanel-indicator-notifications
-    - wingpanel-indicator-power
-    - wingpanel-indicator-session
-    - wingpanel-indicator-sound
+      - wingpanel
+      - wingpanel-applications-menu
+      - wingpanel-indicator-bluetooth
+      - wingpanel-indicator-datetime
+      - wingpanel-indicator-keyboard
+      - wingpanel-indicator-network
+      - wingpanel-indicator-nightlight
+      - wingpanel-indicator-notifications
+      - wingpanel-indicator-power
+      - wingpanel-indicator-session
+      - wingpanel-indicator-sound
 
-  # These RPMs will be removed from the system image.
-  remove:
-    # Remove the native Firefox.
-    - firefox
-    - firefox-langpacks
+    # These RPMs will be removed from the system image.
+    remove:
+      # Remove the native Firefox.
+      - firefox
+      - firefox-langpacks
+
+dx:
+  scripts:
+    # "Pre" scripts run immediately after repos have been imported.
+    pre:
+
+    # "Post" scripts run at the end of the build process.
+    post:
+      - devpod.sh
+      - distrobox.sh
+
+  # Custom RPM configuration.
+  rpm:
+    # A list of urls of repositories that should be added to your system.
+    # Tip: Use `%FEDORA_VERSION%` instead of static Fedora version numbers.
+    repos:
+      - https://copr.fedorainfracloud.org/coprs/eyecantcu/android-udev-rules/repo/fedora-%FEDORA_VERSION%/eyecantcu-android-udev-rules-fedora-%FEDORA_VERSION%.repo
+
+    # These RPMs will be installed from your enabled repositories.
+    install:
+      - android-tools
+      - android-udev-rules
+
+      - libvirt
+      - qemu
+      - qemu-user-static
+      - qemu-user-binfmt
+      - virt-manager
+
+    # These RPMs will be removed from the system image.
+    remove:
+      - distrobox
