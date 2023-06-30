@@ -21,9 +21,17 @@ An opinionated Fedora image with the Pantheon desktop environment.
 
         sudo rpm-ostree rebase ostree-unverified-registry:ghcr.io/eyecantcu/lazulite:38
 
+    For developers:
+
+        sudo rpm-ostree rebase ostree-unverified-registry:ghcr.io/eyecantcu/lazulite-dx:38
+
 1. [Nvidia GPU users only] Open a terminal and rebase the OS to this image:
 
         sudo rpm-ostree rebase ostree-unverified-registry:ghcr.io/eyecantcu/lazulite-nvidia:38
+
+    For developers:
+
+        sudo rpm-ostree rebase ostree-unverified-registry:ghcr.io/eyecantcu/lazulite-dx-nvidia:38
 
 1. Reboot the system and you're done!
 
