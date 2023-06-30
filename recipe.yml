@@ -20,6 +20,8 @@ main:
     install:
       - contractor
 
+      - bat
+
       - ddccontrol
       - ddccontrol-gtk
 
