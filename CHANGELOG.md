@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.2.0](https://github.com/EyeCantCU/lazulite/compare/v1.1.0...v1.2.0) (2023-07-03)
+
+
+### Features
+
+* Add bat, an alternative to cat ([0a2e155](https://github.com/EyeCantCU/lazulite/commit/0a2e155136c73ae106f513526e9c04f90c539782))
+* Introduce Surface support ([4b7d7ba](https://github.com/EyeCantCU/lazulite/commit/4b7d7ba7ebea9d19ab73d33c6cc841a6fc6e7de4))
+
 ## [1.1.0](https://github.com/EyeCantCU/lazulite/compare/v1.0.0...v1.1.0) (2023-06-30)
 
 
