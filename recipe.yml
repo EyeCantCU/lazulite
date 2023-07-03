@@ -2,12 +2,10 @@ main:
   scripts:
     # "Pre" scripts run immediately after repos have been imported.
     pre:
-
     # "Post" scripts run at the end of the build process.
     post:
       - gnome-software-pwa.sh
       - hosts.sh
-
   # Custom RPM configuration.
   rpm:
     # A list of urls of repositories that should be added to your system.
@@ -15,7 +13,6 @@ main:
     repos:
       - https://copr.fedorainfracloud.org/coprs/ublue-os/gnome-software/repo/fedora-%FEDORA_VERSION%/ublue-os-gnome-software-fedora-%FEDORA_VERSION%.repo
       - https://terra.fyralabs.com/terra.repo
-
     # These RPMs will be installed from your enabled repositories.
     install:
       - contractor
@@ -101,31 +98,20 @@ main:
       - wingpanel-indicator-power
       - wingpanel-indicator-session
       - wingpanel-indicator-sound
-
     # These RPMs will be removed from the system image.
     remove:
       # Remove the native Firefox.
       - firefox
       - firefox-langpacks
-
 dx:
   scripts:
-    # "Pre" scripts run immediately after repos have been imported.
     pre:
-
-    # "Post" scripts run at the end of the build process.
     post:
       - devpod.sh
       - distrobox.sh
-
-  # Custom RPM configuration.
   rpm:
-    # A list of urls of repositories that should be added to your system.
-    # Tip: Use `%FEDORA_VERSION%` instead of static Fedora version numbers.
     repos:
       - https://copr.fedorainfracloud.org/coprs/eyecantcu/android-udev-rules/repo/fedora-%FEDORA_VERSION%/eyecantcu-android-udev-rules-fedora-%FEDORA_VERSION%.repo
-
-    # These RPMs will be installed from your enabled repositories.
     install:
       - android-tools
       - android-udev-rules
@@ -135,7 +121,15 @@ dx:
       - qemu-user-static
       - qemu-user-binfmt
       - virt-manager
-
-    # These RPMs will be removed from the system image.
     remove:
       - distrobox
+surface:
+  scripts:
+    pre:
+    post:
+      - surface.sh
+  rpm:
+    repos:
+      - https://pkg.surfacelinux.com/fedora/linux-surface.repo
+    install:
+    remove:

@@ -69,4 +69,34 @@ RUN chmod +x /tmp/scripts/build.sh && \
     /tmp/scripts/build.sh dx && \
     fc-cache -f /usr/share/fonts/intelmono && \
     rm -rf /tmp/* /var/* && \
+    ostree container commit && \
+    mkdir -p /var/tmp && \
+    chmod -R 1777 /var/tmp
+
+# Lazulite Surface
+FROM bluewhaleos-hidpi as bluewhaleos-surface
+
+ARG IMAGE_NAME="${IMAGE_NAME}"
+ARG FEDORA_MAJOR_VERSION="${FEDORA_MAJOR_VERSION}"
+
+COPY scripts /tmp/scripts
+
+RUN chmod +x /tmp/scripts/build.sh && \
+    /tmp/scripts/build.sh surface && \
+    rm -rf /tmp/* /var/* && \
+    ostree container commit && \
+    mkdir -p /var/tmp && \
+    chmod -R 1777 /var/tmp
+
+# Lazulite Surface DX
+FROM lazulite-dx as lazulite-surface-dx
+
+ARG IMAGE_NAME="${IMAGE_NAME}"
+ARG FEDORA_MAJOR_VERSION="${FEDORA_MAJOR_VERSION}"
+
+COPY scripts /tmp/scripts
+
+RUN chmod +x /tmp/scripts/build.sh && \
+    /tmp/scripts/build.sh surface && \
+    rm -rf /tmp/* /var/* && \
     ostree container commit
