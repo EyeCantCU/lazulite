@@ -31,7 +31,7 @@ jobs:
       fail-fast: false
       matrix:
         image_flavor: [main, nvidia]
-        base_name: [lazulite, lazulite-dx]
+        base_name: [lazulite, lazulite-dx, lazulite-surface, lazulite-surface-dx]
         major_version: [38]
         include:
           - major_version: 38

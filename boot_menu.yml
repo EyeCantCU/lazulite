@@ -9,3 +9,23 @@ ublue_variants:
     flavors:
       - label: lazulite-nvidia
         info: Lazulite (Nvidia)
+  - label: eyecantcu/lazulite-dx
+    ks: /kickstart/ublue-os.ks
+    flavors:
+      - label: lazulite-dx
+        info: Lazulite DX
+  - label: eyecantcu/lazulite-dx-nvidia
+    ks: /kickstart/ublue-os-nvidia.ks
+    flavors:
+      - label: lazulite-dx-nvidia
+        info: Lazulite DX (Nvidia)
+  - label: eyecantcu/lazulite-surface-dx
+    ks: /kickstart/ublue-os.ks
+    flavors:
+      - label: lazulite-surface-dx
+        info: Lazulite Surface DX
+  - label: eyecantcu/lazulite-surface-dx-nvidia
+    ks: /kickstart/ublue-os-nvidia.ks
+    flavors:
+      - label: lazulite-surface-dx-nvidia
+        info: Lazulite Surface DX (Nvidia)
